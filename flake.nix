@@ -31,7 +31,7 @@
         mv cmake-init.pyz $out/lib
 
         echo "#!/usr/bin/env bash" >> $out/bin/cmake-init
-        echo "${pkgs.python3}/bin/python $out/lib/cmake-init.pyz $@" >> $out/bin/cmake-init
+        echo "${pkgs.python3}/bin/python $out/lib/cmake-init.pyz \"$@\"" >> $out/bin/cmake-init
         chmod +x $out/bin/cmake-init
       '';
     };
